@@ -51,7 +51,7 @@ API Endpoints
 | POST   | `/api/register/` | Register a new user + token returned |
 | POST   | `/api/login/`    | Login user + token returned          |
 
----
+
 
  **Todos**
 
@@ -88,6 +88,8 @@ todo-api/
 │── README.md
 │── manage.py
 
+
+
 Author
 
 Godman Ajadi
@@ -95,9 +97,4 @@ Backend Developer (Django & Spring Boot)
 
 
 
-✅ Add badges (Python version, last update, license)
-✅ Add screenshots
-✅ Add setup instructions for deployment
-✅ Improve styling (emoji version / professional version)
 
-Just tell me!
