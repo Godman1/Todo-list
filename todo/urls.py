@@ -1,13 +1,15 @@
 from django.urls import path
+from django.views.decorators.csrf import csrf_exempt
+from .views import TodoItemListCreate, ListTodoItems,RegisterUserView,LoginView
 from . import views
 
 
 
 urlpatterns = [
-    path('register/', views.register_user, name='register'),  
-    path('login/', views.login_user, name='login'),  
+    path('register/', RegisterUserView.as_view(), name='register'),  
+    path('login/',  LoginView.as_view(), name='login'),  
     # path('todo/', views.todo_items, name='todo_items'),
-    path('todo/', views.create_todo_item, name='create_todo_item'),
-    path('todo/<int:id>/', views.list_todo_items, name='list_todo_items'),
+    path('todo/', TodoItemListCreate.as_view(), name='todo_items'),
+    path('todo/<int:id>/', ListTodoItems.as_view(), name='list_todo_items'),
    
 ]

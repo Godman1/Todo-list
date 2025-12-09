@@ -19,7 +19,12 @@ class RegisterSerializer(serializers.ModelSerializer):
         user = User(**validated_data)              # create user instance without password
         user.set_password(password)                # set hashed password
         user.save()                        # save user to database
-        return user                        # return the created user instance
+        return user             
+    
+    def validate_password(self,value):
+        if len(value)< 6:
+            raise serializers.ValidationError('Password must contain at least 6 characters.')
+        return value           # return the created user instance
 
 
 
